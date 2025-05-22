@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmare comandă - E-learning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #0070f3;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        h1 {
+            font-size: 22px;
+            margin: 0;
+        }
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .order-info {
+            margin-top: 20px;
+        }
+        .order-info h4 {
+            margin-bottom: 10px;
+        }
+        .order-details {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .order-details td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            padding-top: 20px;
+        }
+        .total-table {
+            margin-top: 10px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .total-table td {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .total {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Comanda ta a fost confirmată!</h1>
+        </div>
+        <p>Felicitări! Ai plasat cu succes o comandă pentru cursul ales.</p>
+
+        <div class="order-info">
+            <h4>Detaliile comenzii:</h4>
+            <table class="order-details">
+                <tr>
+                    <td><strong>Număr comandă:</strong></td>
+                    <td><%= order._id %></td>
+                </tr>
+                <tr>
+                    <td><strong>Data comenzii:</strong></td>
+                    <td><%= order.date %></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="order-info">
+            <h4>Produse comandate:</h4>
+            <table class="order-details">
+                <tr>
+                    <td><strong>Curs</strong></td>
+                    <td><%= order.name %></td>
+                </tr>
+                <tr>
+                    <td><strong>Cantitate</strong></td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><strong>Preț</strong></td>
+                    <td>$<%= order.price %></td>
+                </tr>
+            </table>
+        </div>
+
+        <table class="total-table">
+            <tr>
+                <td>Subtotal:</td>
+                <td>$<%= order.price %></td>
+            </tr>
+            <tr class="total">
+                <td>Total:</td>
+                <td>$<%= order.price %></td>
+            </tr>
+        </table>
+
+        <p>Îți mulțumim că ai ales platforma noastră! Spor la învățat! 📚</p>
+
+        <div class="footer">
+            <p>Ai întrebări? Contactează-ne la <a href="mailto:anaignat893@gmaio.com">anaignat893@gmaio.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
